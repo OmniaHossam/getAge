@@ -30,7 +30,12 @@ let show = () => {
     let inMonth = document.getElementById('month').value;
     let inYear = document.getElementById('year').value;
     let btn = document.getElementById('btn');
-    if (days < inDay && months < inMonth) {
+    if(inDay>31 || inMonth>12)
+    {
+        alert('Please Enter correct date');
+        location.reload();
+    }
+  else  if (days < inDay && months < inMonth) {
         years--;
         months += 11;
         days += 30;
